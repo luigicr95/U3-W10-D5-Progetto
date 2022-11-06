@@ -9,17 +9,16 @@ import { TodosService } from 'src/app/services/todos.service';
   styleUrls: ['./add-task.component.scss'],
 })
 export class AddTaskComponent implements OnInit {
-  newTask: Todos = new Todos();
+  title: string = '';
 
   constructor(private todosService: TodosService) {}
 
   ngOnInit(): void {}
 
   addTask() {
-    this.todosService.addTodo(this.newTask);
-    this.newTask = new Todos();
-    this.newTask.id = this.todosService.todoList.length;
-    this.newTask.completed = false;
-    console.log(this.newTask);
+    let addedTask: Todos = new Todos(this.title);
+    this.todosService.addTodo(addedTask);
+    this.title = '';
+    console.log(addedTask);
   }
 }

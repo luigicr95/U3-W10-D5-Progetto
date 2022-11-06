@@ -18,6 +18,7 @@ export class TodosService {
 
   completeTask(completeTask: Todos) {
     this.completedTodo.push(completeTask);
+    completeTask.completed = true;
     console.log(completeTask);
   }
 }
