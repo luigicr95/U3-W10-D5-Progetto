@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Todos } from '../classes/todos';
 import { Todo } from '../interfaces/todo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
-  todoList: Todo[] = [];
-  completedTodo: Todo[] = [];
+  todoList: Todos[] = [];
+  completedTodo: Todos[] = [];
 
   constructor() {}
+
+  addTodo(newTask: Todos) {
+    this.todoList.push(newTask);
+    console.log(newTask);
+  }
+
+  completeTask(completeTask: Todos) {
+    this.completedTodo.push(completeTask);
+    console.log(completeTask);
+  }
 }

@@ -1,6 +1,9 @@
 <div>
   <ul>
-    <li></li>
+    <li *ngFor="let item of todoArray">
+      {{item.title}}
+      <button type="button" (click)="checkTask(item)">Check</button>
+    </li>
   </ul>
 </div>
 <app-add-task></app-add-task>
