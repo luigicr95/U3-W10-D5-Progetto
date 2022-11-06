@@ -17,6 +17,7 @@ export class TodosService {
   }
 
   completeTask(completeTask: Todos) {
+    completeTask.check = completeTask.check === 'check' ? '' : 'check';
     this.completedTodo.push(completeTask);
     completeTask.completed = true;
     console.log(completeTask);
